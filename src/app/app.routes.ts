@@ -3,6 +3,7 @@ import { Home } from './pages/public/home/home';
 import { Login } from './pages/public/login/login';
 import { Register } from './pages/public/register/register';
 import { Odontologodisponible } from './pages/private/odontologodisponible/odontologodisponible';
+import { HistoriaClinica } from './pages/private/historia-clinica/historia-clinica';
 
 export const routes: Routes = [
     { path: "home" ,component: Home},
@@ -10,7 +11,7 @@ export const routes: Routes = [
     { path: "register" , component: Register},
 
     { path: "admin/disponibilidad", component: Odontologodisponible },
-
+    { path: "admin/historiaClinica", component: HistoriaClinica },
     { path: "**", redirectTo:"home", pathMatch:"full"},
     { path: "", redirectTo: "home", pathMatch: "full"},
 
