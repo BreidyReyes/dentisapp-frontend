@@ -4,6 +4,7 @@ import { Login } from './pages/public/login/login';
 import { Register } from './pages/public/register/register';
 import { Odontologodisponible } from './pages/private/odontologodisponible/odontologodisponible';
 import { HistoriaClinica } from './pages/private/historia-clinica/historia-clinica';
+import { HistoriaClinicaNewForm } from './pages/private/historia-clinica/new-form/new-form';
 
 export const routes: Routes = [
     { path: "home" ,component: Home},
@@ -12,6 +13,7 @@ export const routes: Routes = [
 
     { path: "admin/disponibilidad", component: Odontologodisponible },
     { path: "admin/historiaClinica", component: HistoriaClinica },
+    { path: "admin/historiaClinica/new", component: HistoriaClinicaNewForm },
     { path: "**", redirectTo:"home", pathMatch:"full"},
     { path: "", redirectTo: "home", pathMatch: "full"},
 
