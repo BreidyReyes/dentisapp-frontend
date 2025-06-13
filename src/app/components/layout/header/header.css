@@ -1,0 +1,40 @@
+html {
+    background-color: aquamarine;
+}
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    color: black;
+}
+div {
+    background-color: rgb(39, 161, 121);
+}
+form {
+    display: block;
+    text-align: center;
+    font-weight: 900;
+    background-color: rgb(54, 209, 157);
+}
+input {
+    background-color: rgb(187, 253, 231);
+    border-radius: 40px;
+    width: 400px;
+}
+label {
+    font-weight: 700;
+}
+li, ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 4px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+button {
+    display: block;
+    padding: 10px;
+}
