@@ -1,131 +1,128 @@
 <form 
   [formGroup]="formData"
   (submit)="onSubmit()"
-  id="appointmentContaner"
+  id="appointmentContainer"
   >
-  <h1 class="form-title">Historia Clinica</h1>
+  < id="appointmentForm">
+    <h1 class="form-title">Historia Clinica</h1>
 
-  <div id="appointmentForm" class="field">
-    <label for="name">Nombre</label>
-    <input type="text" formControlName="name" id="name">
-  </div>
+    <div class="field">
+      <label for="name">Nombre</label>
+      <input type="text" formControlName="name" id="name">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="documentId">Número de Documento</label>
-    <input type="text" formControlName="documentId" id="documentId">
-  </div>
+    <div class="field">
+      <label for="documentId">Número de Documento</label>
+      <input type="text" formControlName="documentId" id="documentId">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="birthDate">Fecha de Nacimiento</label>
-    <input type="date" formControlName="birthDate" id="birthDate">
-  </div>
+    <div class="field">
+      <label for="birthDate">Fecha de Nacimiento</label>
+      <input type="date" formControlName="birthDate" id="birthDate">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="age">Edad</label>
-    <input type="number" formControlName="age" id="age">
-  </div>
+    <div class="field">
+      <label for="age">Edad</label>
+      <input type="number" formControlName="age" id="age">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="email">Correo Electrónico</label>
-    <input type="email" formControlName="email" id="email">
-  </div>
+    <div class="field">
+      <label for="email">Correo Electrónico</label>
+      <input type="email" formControlName="email" id="email">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="gender">Género</label>
-    <input type="text" formControlName="gender" id="gender">
-  </div>
+    <div class="field">
+      <label for="gender">Género</label>
+      <input type="text" formControlName="gender" id="gender">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="ethnicGroup">Grupo Étnico</label>
-    <input type="text" formControlName="ethnicGroup" id="ethnicGroup">
-  </div>
+    <div class="field">
+      <label for="ethnicGroup">Grupo Étnico</label>
+      <input type="text" formControlName="ethnicGroup" id="ethnicGroup">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="bloodType">Tipo de Sangre</label>
-    <input type="text" formControlName="bloodType" id="bloodType">
-  </div>
+    <div class="field">
+      <label for="bloodType">Tipo de Sangre</label>
+      <input type="text" formControlName="bloodType" id="bloodType">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="covidIsolation">¿Aislamiento por COVID-19?</label>
-    <input type="text" formControlName="covidIsolation" id="covidIsolation">
-  </div>
+    <div class="field">
+      <label for="covidIsolation">¿Aislamiento por COVID-19?</label>
+      <input type="text" formControlName="covidIsolation" id="covidIsolation">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="consultReason">Motivo de Consulta</label>
-    <input type="text" formControlName="consultReason" id="consultReason">
-  </div>
+    <!-- Campos modificados a textarea con wide-field -->
+    <div class="field wide-field">
+      <label for="consultReason">Motivo de Consulta</label>
+      <textarea formControlName="consultReason" id="consultReason"></textarea>
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="diseaseHistory">Antecedentes de Enfermedades</label>
-    <input type="text" formControlName="diseaseHistory" id="diseaseHistory">
-  </div>
+    <div class="field wide-field">
+      <label for="diseaseHistory">Antecedentes de Enfermedades</label>
+      <textarea formControlName="diseaseHistory" id="diseaseHistory"></textarea>
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="personalHistory">Antecedentes Personales</label>
-    <input type="text" formControlName="personalHistory" id="personalHistory">
-  </div>
+    <div class="field wide-field">
+      <label for="personalHistory">Antecedentes Personales</label>
+      <textarea formControlName="personalHistory" id="personalHistory"></textarea>
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="currentMeds">Medicamentos Actuales</label>
-    <input type="text" formControlName="currentMeds" id="currentMeds">
-  </div>
+    <div class="field wide-field">
+      <label for="currentMeds">Medicamentos Actuales</label>
+      <textarea formControlName="currentMeds" id="currentMeds"></textarea>
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="familyHistory">Antecedentes Familiares</label>
-    <input type="text" formControlName="familyHistory" id="familyHistory">
-  </div>
+    <div class="field wide-field">
+      <label for="familyHistory">Antecedentes Familiares</label>
+      <textarea formControlName="familyHistory" id="familyHistory"></textarea>
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="oralHygiene">Higiene Oral</label>
-    <input type="text" formControlName="oralHygiene" id="oralHygiene">
-  </div>
+    <div class="field">
+      <label for="oralHygiene">Higiene Oral</label>
+      <input type="text" formControlName="oralHygiene" id="oralHygiene">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="intraoralExam">Examen Intraoral</label>
-    <input type="text" formControlName="intraoralExam" id="intraoralExam">
-  </div>
+    <div class="field wide-field">
+      <label for="intraoralExam">Examen Intraoral</label>
+      <textarea formControlName="intraoralExam" id="intraoralExam"></textarea>
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="otherFindings">Otros Hallazgos</label>
-    <input type="text" formControlName="otherFindings" id="otherFindings">
-  </div>
+    <div class="field wide-field">
+      <label for="otherFindings">Otros Hallazgos</label>
+      <textarea formControlName="otherFindings" id="otherFindings"></textarea>
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="companionName">Nombre del Acompañante</label>
-    <input type="text" formControlName="companionName" id="companionName">
-  </div>
+    <!-- Campos de acompañante agrupados -->
+    <div class="field">
+      <label for="companionName">Nombre del Acompañante</label>
+      <input type="text" formControlName="companionName" id="companionName">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="companionId">Documento del Acompañante</label>
-    <input type="text" formControlName="companionId" id="companionId">
-  </div>
+    <div class="field">
+      <label for="companionId">Documento del Acompañante</label>
+      <input type="text" formControlName="companionId" id="companionId">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="companionRelation">Parentesco del Acompañante</label>
-    <input type="text" formControlName="companionRelation" id="companionRelation">
-  </div>
+    <div class="field">
+      <label for="companionRelation">Parentesco del Acompañante</label>
+      <input type="text" formControlName="companionRelation" id="companionRelation">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="isGuardian">¿Es Representante Legal?</label>
-    <input type="text" formControlName="isGuardian" id="isGuardian">
-  </div>
+    <div class="field">
+      <label for="isGuardian">¿Es Representante Legal?</label>
+      <input type="text" formControlName="isGuardian" id="isGuardian">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="guardianName">Nombre del Representante</label>
-    <input type="text" formControlName="guardianName" id="guardianName">
-  </div>
+    <!-- Campos de representante legal agrupados -->
+    <div class="field">
+      <label for="guardianName">Nombre del Representante</label>
+      <input type="text" formControlName="guardianName" id="guardianName">
+    </div>
 
-  <div id="appointmentForm" class="field">
-    <label for="guardianId">Documento del Representante</label>
-    <input type="text" formControlName="guardianId" id="guardianId">
-  </div>
-
-  <div id="appointmentForm" class="field">
-    <label for="guardianPhone">Teléfono del Representante</label>
-    <input type="tel" formControlName="guardianPhone" id="guardianPhone">
-  </div>
-
-  <div id="appointmentForm" class="field">
-    <button type="submit">Registrar</button>
+    <div class="form-actions">
+  <button type="submit" class="btn btn-primary">
+    Registrar Historia Clínica
+  </button>
   </div>
 </form>
+     

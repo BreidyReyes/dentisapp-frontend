@@ -1,45 +1,56 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-form',
-  imports: [ ReactiveFormsModule ],
+  imports: [ReactiveFormsModule],
   templateUrl: './new-form.html',
-  styleUrl: './new-form.css'
+  styleUrls: ['./new-form.css']  // <- aquí el cambio: styleUrls en plural
 })
 export class HistoriaClinicaNewForm {
 formData!: FormGroup;
 
   constructor() {
     this.formData = new FormGroup({
-      name: new FormControl(),
-      documentId: new FormControl(),
-      birthDate: new FormControl(),
-      age: new FormControl(),
-      email: new FormControl(),
-      gender: new FormControl(),
-      ethnicGroup: new FormControl(),
-      bloodType: new FormControl(),
-      covidIsolation: new FormControl(),
-      consultReason: new FormControl(),
-      diseaseHistory: new FormControl(),
-      personalHistory: new FormControl(),
-      currentMeds: new FormControl(),
-      familyHistory: new FormControl(),
-      oralHygiene: new FormControl(),
-      intraoralExam: new FormControl(),
-      otherFindings: new FormControl(),
-      companionName: new FormControl(),
+      name: new FormControl('', [Validators.required, Validators.minLength( 5 ), Validators.maxLength( 50 ) ]),
+      documentId: new FormControl('', [Validators.required]),
+      birthDate: new FormControl('', [Validators.required]),
+      age: new FormControl( 0, [Validators.required, Validators.min(0)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      gender: new FormControl('', [Validators.required]),
+      ethnicGroup: new FormControl('', [Validators.required]),
+      bloodType: new FormControl('', [Validators.required]),
+      covidIsolation: new FormControl(true, [Validators.required]),
+      consultReason: new FormControl('', [Validators.required]),
+      diseaseHistory: new FormControl('', [Validators.required]),
+      personalHistory: new FormControl('', [Validators.required]),
+      currentMeds: new FormControl('', [Validators.required]),
+      familyHistory: new FormControl('', [Validators.required]),
+      oralHygiene: new FormControl('', [Validators.required]),
+      intraoralExam: new FormControl('', [Validators.required]),
+      otherFindings: new FormControl('', [Validators.required]),
+      companionName: new FormControl('', [Validators.required]),
       companionId: new FormControl(),
       companionRelation: new FormControl(),
-      isGuardian: new FormControl(),
+      isGuardian: new FormControl( true, [Validators.required]),
       guardianName: new FormControl(),
       guardianId: new FormControl(),
-      guardianPhone: new FormControl()
+      guardianPhone: new FormControl( 0 )
     });
   }
 
   onSubmit() {
     console.log( this.formData.value );
+    console.log(
+      this.formData.valid,
+      this.formData.invalid,
+      this.formData.pristine,
+      this.formData.dirty,
+      this.formData.touched
+    )
+
+    if( this.formData.valid ) {
+      console.log( this.formData.value )
+    }
   }
 }
