@@ -9,4 +9,11 @@ import { RouterLink } from '@angular/router';
 })
 export class Header {
 
+  constructor( private authService: AuthService, private router: Router )
+
+  logout(){
+  this.authService.deleteLocalStotage( 'token' );
 }
+}
+
+
