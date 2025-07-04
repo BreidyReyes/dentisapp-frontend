@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HistoriaClinicaServices } from '../../../../services/historia-clinica-services';
 
 @Component({
   selector: 'app-new-form',
@@ -10,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class HistoriaClinicaNewForm {
 formData!: FormGroup;
 
-  constructor() {
+  constructor( private historiaClinicaServices: HistoriaClinicaServices ) {
     this.formData = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength( 5 ), Validators.maxLength( 50 ) ]),
       documentId: new FormControl('', [Validators.required]),
