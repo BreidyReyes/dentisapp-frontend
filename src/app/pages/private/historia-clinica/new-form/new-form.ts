@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HistoriaClinicaServices } from '../../../../services/historia-clinica-services';
-
+import { HistoriaClinicaService } from '../../../../services/historia-clinica-services';
 @Component({
   selector: 'app-new-form',
   imports: [ReactiveFormsModule],
@@ -11,7 +10,7 @@ import { HistoriaClinicaServices } from '../../../../services/historia-clinica-s
 export class HistoriaClinicaNewForm {
 formData!: FormGroup;
 
-  constructor( private historiaClinicaServices: HistoriaClinicaServices ) {
+  constructor( private historiaClinicaService: HistoriaClinicaService ) {
     this.formData = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength( 5 ), Validators.maxLength( 50 ) ]),
       documentId: new FormControl('', [Validators.required]),
@@ -51,7 +50,22 @@ formData!: FormGroup;
     )
 
     if( this.formData.valid ) {
-      console.log( this.formData.value )
+      console.log( this.formData.value );
+      const formValue = {
+        ...this.formData.value,
+        birthDate: new Date(this.formData.value.birthDate).toISOString()
+      };
+
+      this.historiaClinicaService.createHistoriaClinica(formValue).subscribe({
+        next: (response) => {
+          console.log('Respuesta del servidor:', response);
+          this.formData.reset();
+        },
+        error: (err) => {
+          console.error('Error:', err);
+        }
+      });
+
     }
   }
 }
